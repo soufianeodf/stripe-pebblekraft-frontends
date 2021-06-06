@@ -58,8 +58,11 @@ var stripeElements = function(publicKey, setupIntent) {
   });
 };
 
+// should retrieve company_id of current user
+var company_id = 1000004;
+
 var getSetupIntent = function(publicKey) {
-  return fetch("http://localhost:8000/payment/v1/1000004/stripe/card/intent", {
+  return fetch("http://localhost:8000/payment/v1/" + company_id + "/stripe/card/intent", {
     method: "get",
     headers: {
       "Content-Type": "application/json"
